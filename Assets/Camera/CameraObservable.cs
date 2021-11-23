@@ -7,6 +7,7 @@ public class CameraObservable : MonoBehaviour
     [SerializeField] private Vector3 _eulers;
     [SerializeField] private bool _lookAtObject;
     [SerializeField] private Vector3 _lookAtEulers;
+    [SerializeField, Range(0, 255)] private int _priority;
 
     public Transform Transform => transform;
     public Vector3 CameraPosition { get; protected set; }

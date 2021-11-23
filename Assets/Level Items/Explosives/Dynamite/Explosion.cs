@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Explosion : MonoBehaviour, IDamager
 {
+    [SerializeField] private float _delay;
     [SerializeField] private float _explosionRange;
     [SerializeField] private float _explosionForce;
     [SerializeField] private float _damage;
@@ -12,9 +13,18 @@ public class Explosion : MonoBehaviour, IDamager
 
     public void Explode()
     {
+        DamageObjectsInRange();
+        ForceObjectsInRange();
+    }
+
+    private void DamageObjectsInRange()
+    {
         List<IDamagable> damagables = GetIDamagablesInExplosionRange();
         DamageIDamagables(damagables);
+    }
 
+    private void ForceObjectsInRange()
+    {
         List<Rigidbody> rigidbodies = GetRigidbodiesInExplosionRange();
         AddExplosionForceToRigidbodies(rigidbodies);
     }

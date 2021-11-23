@@ -125,5 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41ecab5b867dbbd479bf0fb02d4e1b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _force: 55
   _damage: 1
   _hitDistance: 0.55

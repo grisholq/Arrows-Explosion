@@ -5352,11 +5352,11 @@ Transform:
   m_LocalPosition: {x: 2.7729325, y: 12.783303, z: -2.2658958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1733445107}
   - {fileID: 929609906}
   - {fileID: 353652415}
   - {fileID: 515113139}
   - {fileID: 857728239}
-  - {fileID: 1733445107}
   m_Father: {fileID: 2079613345}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6038,7 +6038,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ecb31a320415bdd428c8e1c0f7121149, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

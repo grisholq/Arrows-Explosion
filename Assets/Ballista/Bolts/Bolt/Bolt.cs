@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Bolt : MonoBehaviour, IDamager
 {
+    [SerializeField] private float _force;
     [SerializeField] private float _damage;
     [SerializeField] private float _hitDistance;
 
@@ -34,9 +35,14 @@ public class Bolt : MonoBehaviour, IDamager
         _stuck = true;
         transform.SetParent(hitTransform, true);
 
-        if (hitTransform.TryGetComponent<IDamagable>(out IDamagable damagable))
+        if (hitTransform.TryGetComponent(out IDamagable damagable))
         {
             Damage(damagable);
+        }
+        
+        if (hitTransform.TryGetComponent(out Rigidbody rigidbody))
+        {
+            rigidbody.AddForce(transform.forward * _force);
         }
     }
 

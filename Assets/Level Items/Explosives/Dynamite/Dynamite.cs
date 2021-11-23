@@ -15,7 +15,9 @@ public class Dynamite : MonoBehaviour, IDamagable
 
     public void RecieveDamage(float damage = 0)
     {
-        Explode();
+        Timer delay = new Timer(0.1f);
+        delay.Expired += Explode;
+        delay.Launch();
     }
 
     public void Explode()

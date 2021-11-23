@@ -4,6 +4,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Explosion))]
 public class Firework : MonoBehaviour, IDamagable, IDamager
 {
+    [SerializeField] private float _damageToExplodeInstantly;
     [SerializeField] private float _explosionTime;
     [SerializeField] private ParticleSystem _explosionParticles;
 
@@ -50,15 +51,22 @@ public class Firework : MonoBehaviour, IDamagable, IDamager
         {
             Damage(damagable);
         }
-        else
-        {
-            Explode();
-        }
+
+        Explode();
     }
 
     public void RecieveDamage(float damage = 0)
     {
-        Launch();
+        if(damage < _damageToExplodeInstantly)
+        {
+            Launch();
+        }
+        else
+        {
+            Timer delay = new Timer(0.1f);
+            delay.Expired += Explode;
+            delay.Launch();
+        }      
     }
 
     public void Damage(IDamagable damagable)
