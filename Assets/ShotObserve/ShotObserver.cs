@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ShotObserver : MonoBehaviour
+public class ShotObserver : Singleton<ShotObserver>
 {
     [SerializeField] private Ballista _balista;
     [SerializeField] private float _observationTime;
@@ -12,20 +12,18 @@ public class ShotObserver : MonoBehaviour
     private void Awake()
     {
         _balista.Shot += StartObservation;
+        _balista.Reloaded += StopObservation;
     }
 
     private void StartObservation()
     {
-        _observationStarted?.Invoke();
         Sloumo.Instance.Activate();
-
-        Timer period = new Timer(_observationTime);
-        period.Expired += StopObservation;
-        period.Launch();
+        _observationStarted?.Invoke();     
     }
 
     private void StopObservation()
     {
-        _observationStarted?.Invoke();
+        Sloumo.Instance.Deactivate();
+        _observationEnded?.Invoke();
     }
 }

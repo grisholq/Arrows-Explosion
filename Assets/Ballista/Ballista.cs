@@ -10,6 +10,7 @@ public class Ballista : MonoBehaviour
     [SerializeField] private GameObject _shotInput;
 
     public event UnityAction Shot;
+    public event UnityAction Reloaded;
 
     private ISlideInput _input; 
     private bool _loaded = true;
@@ -36,7 +37,13 @@ public class Ballista : MonoBehaviour
         _loaded = false;
 
         Timer timer = new Timer(_reloadTime);
-        timer.Expired += (() => _loaded = true);
+        timer.Expired += Reload;
         timer.Launch();
+    }
+
+    private void Reload()
+    {
+        _loaded = true;
+        Reloaded?.Invoke();
     }
 }
