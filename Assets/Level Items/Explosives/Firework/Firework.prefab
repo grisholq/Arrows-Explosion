@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5388862008775074353}
   - component: {fileID: 6809088821887178460}
   - component: {fileID: 5426562519068699593}
+  - component: {fileID: 6788879585443197164}
   m_Layer: 0
   m_Name: Firework
   m_TagString: Untagged
@@ -48,8 +49,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.41755566, y: 0.4095769, z: 1.6382955}
+  m_Center: {x: 0.011967975, y: 0.023936076, z: -0.007978848}
 --- !u!54 &2475876332687028700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &2738959392162786937
 MonoBehaviour:
@@ -78,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30943d9033b870f40a177e40be2604f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageToExplodeInstantly: 15
+  _damageToExplodeInstantly: 50
   _explosionTime: 1
   _explosionParticles: {fileID: 6026067159826573873, guid: fe1e65f6f2efa7049b3f155c275230f3, type: 3}
 --- !u!114 &5388862008775074353
@@ -96,7 +97,7 @@ MonoBehaviour:
   _delay: 0.15
   _explosionRange: 12
   _explosionForce: 700
-  _damage: 15
+  _damage: 51
 --- !u!114 &6809088821887178460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,8 +124,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stoppedByDefault: 1
-  _speed: 60
+  _speed: 80
   _reachDistance: 0.1
+--- !u!114 &6788879585443197164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224259474111058964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a6c83529d264145933d3c4b2d5e4ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDefault: 0
+  _position: {x: 0, y: 0, z: 0}
+  _eulers: {x: 0, y: 0, z: 0}
+  _lookAtObject: 1
+  _lookAtEulers: {x: 0, y: 0, z: 0}
+  _priority: 60
 --- !u!1 &7615232129114382890
 GameObject:
   m_ObjectHideFlags: 0

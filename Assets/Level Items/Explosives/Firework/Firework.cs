@@ -9,6 +9,7 @@ public class Firework : MonoBehaviour, IDamagable, IDamager
     [SerializeField] private ParticleSystem _explosionParticles;
 
     public event UnityAction Launched;
+    public event UnityAction Exploded;
 
     private Explosion _explosion;
     private bool _launched = false;
@@ -39,6 +40,7 @@ public class Firework : MonoBehaviour, IDamagable, IDamager
     {
         if (_exploded == true) return;
 
+        Exploded?.Invoke();
         _exploded = true;
         _explosion.Explode();
         Instantiate(_explosionParticles, transform.position, Quaternion.identity);

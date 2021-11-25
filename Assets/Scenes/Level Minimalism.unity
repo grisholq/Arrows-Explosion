@@ -5251,6 +5251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971dfb9e06683ea49bf12d3c6025a486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 60
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12338,7 +12339,6 @@ MonoBehaviour:
   _eulers: {x: 0, y: 0, z: 0}
   _lookAtObject: 1
   _lookAtEulers: {x: -20, y: 0, z: 0}
-  _priority: 0
   _coeffX: 0.2
   _coeffZ: 1
   _distance: -14

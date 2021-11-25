@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a58de3644667cc469da234c39983187, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  _speed: 20
 --- !u!114 &3517334526562329908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef37e664bf08e244d8cbc98d57ddf3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDefault: 1
+  _isDefault: 0
   _position: {x: 0, y: 0, z: 0}
   _eulers: {x: 0, y: 0, z: 0}
   _lookAtObject: 1
   _lookAtEulers: {x: 0, y: 0, z: 0}
-  _priority: 10
+  _priority: 50
 --- !u!1001 &187212418420232
 PrefabInstance:
   m_ObjectHideFlags: 0

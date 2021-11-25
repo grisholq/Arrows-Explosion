@@ -6,8 +6,7 @@ public class CameraObserver : Singleton<CameraObserver>
     [SerializeField] private float _speed;
 
     public CameraObservable Current { get; set; }
-
-   
+  
     private void LateUpdate()
     {
         Observe();
@@ -17,7 +16,7 @@ public class CameraObserver : Singleton<CameraObserver>
     {
         if (Current == null) return;
 
-        transform.position = Vector3.MoveTowards(transform.position, Current.CameraPosition, _speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, Current.CameraPosition, _speed * Time.unscaledDeltaTime);
 
         if (Current.LookAtObject)
         {

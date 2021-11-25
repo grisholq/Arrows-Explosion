@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BoltsBarrage : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    [SerializeField] private float _speed;
+
+    public event UnityAction Hit;
 
     private Traectory _traectory;
     private float _progress;
@@ -36,13 +39,14 @@ public class BoltsBarrage : MonoBehaviour
 
         if(HasBolts() == false)
         {
+            Hit?.Invoke();
             Destroy(gameObject);
         }
     }
 
     private void IncrementProgress()
     {
-        _progress += Time.deltaTime * speed;
+        _progress += Time.deltaTime * _speed;
     }
 
     private void UpdatePosition()
@@ -54,6 +58,6 @@ public class BoltsBarrage : MonoBehaviour
 
     private bool HasBolts()
     {
-        return transform.childCount != 0;
+        return transform.childCount > 0;
     }
 }
