@@ -1,10 +1,11 @@
+using DCFAEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Explosion))]
 public class Dynamite : MonoBehaviour, IDamagable
 {
-    [SerializeField] private ParticleSystem _explosionParticles;
+    [SerializeField] private SpecialEffect _explosionPrefab;
 
     public event UnityAction Hit;
     public event UnityAction Exploded;
@@ -32,7 +33,8 @@ public class Dynamite : MonoBehaviour, IDamagable
     {
         Exploded?.Invoke();
         _explosion.Explode();
-        Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+        SpecialEffect explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        explosion.Show();
         gameObject.SetActive(false);
         Destroy(gameObject, 0.3f);       
     }

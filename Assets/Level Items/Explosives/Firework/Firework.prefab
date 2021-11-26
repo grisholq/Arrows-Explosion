@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageToExplodeInstantly: 50
   _explosionTime: 1
-  _explosionParticles: {fileID: 6026067159826573873, guid: fe1e65f6f2efa7049b3f155c275230f3, type: 3}
+  _explosionPrefab: {fileID: 1378846128803930435, guid: 41a033bc8cf2a7c48af85938d9e36b74, type: 3}
 --- !u!114 &5388862008775074353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   _delay: 0.15
   _explosionRange: 12
   _explosionForce: 700
+  _explosionOffset: {x: 0, y: 0, z: 0}
   _damage: 51
 --- !u!114 &6809088821887178460
 MonoBehaviour:

@@ -8,6 +8,11 @@ public class Bolt : MonoBehaviour, IDamager
 
     private bool _stuck = false;
 
+    private void Awake()
+    {
+        transform.eulerAngles = Vector3.forward * Random.Range(0f, 360f);
+    }
+
     private void Update()
     {
         if (_stuck) return;

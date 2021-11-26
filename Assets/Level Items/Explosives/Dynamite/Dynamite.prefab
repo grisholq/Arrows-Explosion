@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932212289323456950}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0.47, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 8622158389626816947}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95afda4c4e86c1e4b8934c05cae88506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _explosionParticles: {fileID: 6026067159826573873, guid: fe1e65f6f2efa7049b3f155c275230f3, type: 3}
+  _explosionPrefab: {fileID: 1378846128803930435, guid: 41a033bc8cf2a7c48af85938d9e36b74, type: 3}
 --- !u!114 &5393303353662198305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,9 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f6fa7c28b69e04da775a3ce2bedbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 0.15
+  _delay: 0.35
   _explosionRange: 6
   _explosionForce: 700
+  _explosionOffset: {x: 0, y: 0, z: 0}
   _damage: 51
 --- !u!114 &2575709844449517509
 MonoBehaviour:

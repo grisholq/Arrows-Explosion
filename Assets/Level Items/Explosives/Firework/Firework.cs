@@ -1,3 +1,4 @@
+using DCFAEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,7 +7,8 @@ public class Firework : MonoBehaviour, IDamagable, IDamager
 {
     [SerializeField] private float _damageToExplodeInstantly;
     [SerializeField] private float _explosionTime;
-    [SerializeField] private ParticleSystem _explosionParticles;
+    //[SerializeField] private ParticleSystem _explosionParticles;
+    [SerializeField] private SpecialEffect _explosionPrefab;
 
     public event UnityAction Launched;
     public event UnityAction Exploded;
@@ -43,7 +45,8 @@ public class Firework : MonoBehaviour, IDamagable, IDamager
         Exploded?.Invoke();
         _exploded = true;
         _explosion.Explode();
-        Instantiate(_explosionParticles, transform.position, Quaternion.identity);
+        SpecialEffect explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+        explosion.Show();
         Destroy(gameObject);      
     }
 

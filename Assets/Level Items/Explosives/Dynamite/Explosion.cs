@@ -7,6 +7,7 @@ public class Explosion : MonoBehaviour, IDamager
     [SerializeField] private float _delay;
     [SerializeField] private float _explosionRange;
     [SerializeField] private float _explosionForce;
+    [SerializeField] private Vector3 _explosionOffset;
     [SerializeField] private float _damage;
 
     public event UnityAction Exploded;
@@ -32,7 +33,7 @@ public class Explosion : MonoBehaviour, IDamager
     private List<Rigidbody> GetRigidbodiesInExplosionRange()
     {
         Collider[] colliders;
-        colliders = Physics.OverlapSphere(transform.position, _explosionRange);
+        colliders = Physics.OverlapSphere(transform.position + _explosionOffset, _explosionRange);
 
         List<Rigidbody> rigidbodies = new List<Rigidbody>();
 
@@ -50,7 +51,7 @@ public class Explosion : MonoBehaviour, IDamager
     private List<IDamagable> GetIDamagablesInExplosionRange()
     {
         Collider[] colliders;
-        colliders = Physics.OverlapSphere(transform.position, _explosionRange);
+        colliders = Physics.OverlapSphere(transform.position + _explosionOffset, _explosionRange);
 
         List<IDamagable> damagables = new List<IDamagable>();
 
@@ -84,5 +85,11 @@ public class Explosion : MonoBehaviour, IDamager
     public void Damage(IDamagable damagable)
     {
         damagable.RecieveDamage(_damage);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position + _explosionOffset, _explosionRange);
+        Gizmos.DrawSphere(transform.position + _explosionOffset, 0.1f);
     }
 }

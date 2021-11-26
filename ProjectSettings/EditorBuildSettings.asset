@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Minimalism.unity
     guid: 6beab42fea38ddc48954bbe1aad90f4e
+  - enabled: 1
+    path: Assets/MISHA/Levels/Level1.unity
+    guid: 9cce7f64d8c1cdb4097d7adc5ce42644
+  - enabled: 1
+    path: Assets/MISHA/Levels/Level2.unity
+    guid: 7a785ac687c4b8542b415126ccf9112d
+  - enabled: 1
+    path: Assets/MISHA/Levels/Level3.unity
+    guid: 26566d78f1b5efe4faac09bde7432661
   m_configObjects: {}
