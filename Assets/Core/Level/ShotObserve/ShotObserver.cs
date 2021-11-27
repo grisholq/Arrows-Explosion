@@ -4,15 +4,15 @@ using UnityEngine.Events;
 [RequireComponent(typeof(ShotObserverObjects))]
 public class ShotObserver : Singleton<ShotObserver>
 {
-    [SerializeField] private Ballista _balista;
+    [SerializeField] private BallistaBoltShooter _shooter;
     [SerializeField] private UnityEvent _observationStarted;
     [SerializeField] private UnityEvent _observationEnded;
 
     public ShotObserverObjects ObserverObjects { get; protected set; }
 
     private void Awake()
-    {      
-        _balista.Shot += StartObservation;
+    {
+        _shooter.Shooted += StartObservation;
 
         ObserverObjects = new ShotObserverObjects();
         ObserverObjects.CurrentChanged += SetObservedObject;

@@ -24,9 +24,12 @@ public class TouchSlideInput : MonoBehaviour, ISlideInput
 
     private Vector3 _slideLastPosition;
     private bool _slideStarted = false;
+    private bool _enabled = true;
 
     private void Update()
     {
+        if (_enabled == false) return;
+
         if (Input.touchCount != 1) return;
 
         Touch touch = Input.GetTouch(0);
@@ -93,5 +96,15 @@ public class TouchSlideInput : MonoBehaviour, ISlideInput
     private void UpdateSlideLastPosition()
     {
         _slideLastPosition = Input.mousePosition;
+    }
+
+    public void Enable()
+    {
+        _enabled = true;
+    }
+
+    public void Disable()
+    {
+        enabled = false;
     }
 }

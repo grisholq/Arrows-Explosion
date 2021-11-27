@@ -1,31 +1,33 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Ballista))]
 public class BallistaAmmo : MonoBehaviour
 {
+    [SerializeField] private UnityEvent<int, int> _ammoChanged;
     [SerializeField] private int _ammoAmount;
 
-    public event UnityAction OutOfAmmo;
+    public bool OutOfAmmo => CurrentAmmo <= 0;
 
-    private Ballista _ballista;
+    private int CurrentAmmo
+    {
+        get => _currentAmmo;
+
+        set
+        {
+            _currentAmmo = value;
+            _ammoChanged.Invoke(_currentAmmo, _ammoAmount);
+        }
+    }
+
     private int _currentAmmo;
 
     private void Awake()
     {
-        _ballista = GetComponent<Ballista>();
-        _ballista.Shot += SpendAmmo;
-
-        _currentAmmo = _ammoAmount;
+        CurrentAmmo = _ammoAmount;
     }
 
     public void SpendAmmo()
     {
-        _currentAmmo--;
-
-        if(_currentAmmo < 0)
-        {
-            OutOfAmmo?.Invoke();
-        }
+        CurrentAmmo--;
     }
 }

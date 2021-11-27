@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class BallistaAnimatorInterface : AnimatorInterface
 {
-    [SerializeField] private Ballista _ballista;
+    [SerializeField] private BallistaBoltShooter _shooter;
     [SerializeField] private string _shootParameter;
 
     private void Awake()
     {
-        _ballista.Shot += Shoot;
+        _shooter.Shooted += Shoot;
     }
 
     public void Shoot()

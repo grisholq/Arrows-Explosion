@@ -24,6 +24,7 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
 
     private Vector3 _slideLastPosition;
     private bool _slideStarted = false;
+    private bool _enabled = true;
 
     private void Awake()
     {
@@ -32,6 +33,8 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
 
     private void Update()
     {
+        if (_enabled == false) return;
+
         if(SlideStarted())
         {          
             StartSlide();
@@ -111,5 +114,15 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
     private void UpdateSlideLastPosition()
     {
         _slideLastPosition = Input.mousePosition;
+    }
+
+    public void Enable()
+    {
+        _enabled = true;
+    }
+
+    public void Disable()
+    {
+        _enabled = false;
     }
 }

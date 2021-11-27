@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public interface ISlideInput
+public interface ISlideInput : IInput
 {
     public event UnityAction Started;
     public event UnityAction Moved;
