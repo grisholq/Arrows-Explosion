@@ -5,8 +5,10 @@ public class Bolt : MonoBehaviour, IDamager
     [SerializeField] private float _force;
     [SerializeField] private float _damage;
     [SerializeField] private float _hitDistance;
+    [SerializeField] private TrailRenderer _trailRenderer;
 
     private bool _stuck = false;
+
 
     private void Awake()
     {
@@ -39,6 +41,7 @@ public class Bolt : MonoBehaviour, IDamager
     {
         _stuck = true;
         transform.SetParent(hitTransform, true);
+        _trailRenderer.emitting = false;
 
         if (hitTransform.TryGetComponent(out IDamagable damagable))
         {
