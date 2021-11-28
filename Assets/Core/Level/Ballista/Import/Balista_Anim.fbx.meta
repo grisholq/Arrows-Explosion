@@ -12,7 +12,12 @@ ModelImporter:
   - first:
       74: 229770723416056496
     second: Reload
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Balista
+    second: {fileID: 2100000, guid: 77ce8d52e19972e45ae95b5e45605a3a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -152,7 +157,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.008
+    globalScale: 0.8
     rootMotionBoneName: ROOT
     hasTranslationDoF: 0
     hasExtraRoot: 0
