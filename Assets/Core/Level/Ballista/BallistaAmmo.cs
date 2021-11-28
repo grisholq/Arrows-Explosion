@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class BallistaAmmo : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _outOfAmmo;
     [SerializeField] private UnityEvent<int, int> _ammoChanged;
     [SerializeField] private int _ammoAmount;
 
@@ -29,5 +30,13 @@ public class BallistaAmmo : MonoBehaviour
     public void SpendAmmo()
     {
         CurrentAmmo--;
+    }
+    
+    public void CheckAmmo()
+    {
+        if(CurrentAmmo == 0)
+        {
+            _outOfAmmo?.Invoke();
+        }
     }
 }

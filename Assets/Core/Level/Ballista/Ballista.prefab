@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _marker: {fileID: 5517090662444215227}
-  _step: 2
+  _step: 3
 --- !u!1 &338387349048117945
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   _minForce: 2
   _maxForce: 30
   _forceMultiplier: 0.065
-  _additionalDistance: 5
+  _additionalDistance: 8
 --- !u!1 &4247454087686081832
 GameObject:
   m_ObjectHideFlags: 0

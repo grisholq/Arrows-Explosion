@@ -21,10 +21,11 @@ public class BallistaBoltShooter : MonoBehaviour
 
     public void Shoot()
     {
+        
         BoltsBarrage barrage = _barrages.GetBoltsBarrage();
         barrage.Launch(_traectory.Current);
-        Shooted?.Invoke();
         _ammo.SpendAmmo();
+        Shooted?.Invoke();
         _input.Disable();
 
         Reload();

@@ -8,12 +8,4 @@ public class StickmanMover : NavMeshMover
     {
         _stability.Destabilized += Stop;
     }
-
-    private void FixedUpdate()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Resume();
-        }
-    }
 }

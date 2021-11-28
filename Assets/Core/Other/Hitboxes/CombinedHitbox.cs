@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class CombinedHitbox : Hitbox
 {
     private Hitbox[] _hitboxes;

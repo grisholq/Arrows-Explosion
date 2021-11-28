@@ -26,6 +26,12 @@ public class Sloumo : Singleton<Sloumo>
         SetNormalTime();
     }
 
+    public void StopTime()
+    {
+        Time.timeScale = 0;
+        Time.fixedDeltaTime = 0;
+    }
+
     private void SetSlowTime()
     {
         Time.timeScale = _slowTimeScale;

@@ -5,6 +5,7 @@ public class StickmanAnimatorInterface : AnimatorInterface
     [SerializeField] private StickmanMover _mover;
     [SerializeField] private StickmanStability _stability;
     [SerializeField] private string _movingParameter;
+    [SerializeField] private string _danceParameter;
 
     private void Awake()
     {
@@ -29,5 +30,11 @@ public class StickmanAnimatorInterface : AnimatorInterface
     {
         if (_animator.enabled == false) return;
         _animator.SetTrigger("Death");
+    }
+    
+    public void Dance()
+    {
+        if (_animator.enabled == false) return;
+        _animator.SetTrigger("Dance");
     }
 }

@@ -5,6 +5,8 @@ public class NavMeshMover : Mover
 {
     [SerializeField] private NavMeshAgent _navAgent;
 
+    private bool _stopped;
+
     protected override void LateInizialize()
     {
         base.LateInizialize();
@@ -13,6 +15,7 @@ public class NavMeshMover : Mover
 
     public override void SetDestination(Vector3 destination)
     {
+        if (_stopped) return;
         _navAgent.SetDestination(destination);   
     }
 
@@ -26,6 +29,8 @@ public class NavMeshMover : Mover
 
     protected override bool ReachedDestination()
     {
+        if (_stopped) return false;
+
         return _navAgent.remainingDistance <= _navAgent.stoppingDistance;
     }
 
@@ -33,11 +38,17 @@ public class NavMeshMover : Mover
     {
         base.Resume();
         _navAgent.isStopped = false;
+        _navAgent.enabled = true;
+        _stopped = false;
     }
 
     public override void Stop()
     {
+        if (_stopped) return;
+
         base.Stop();
         _navAgent.isStopped = true;
+        _navAgent.enabled = false;
+        _stopped = true;
     }
 }

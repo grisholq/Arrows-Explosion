@@ -97,11 +97,6 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
         transform.position =(movepos);
     }
 
-    //private void FixedUpdate()
-    //{
-    //    
-    //}
-
     void IDamager.Damage(IDamagable damagable)
     {
 

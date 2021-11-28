@@ -19,6 +19,34 @@ public class Ragdoll : MonoBehaviour
             return sum / _parts.Length;
         }
     }
+    
+    public float MaxVelocity
+    {
+        get
+        {
+            float max = float.MinValue;
+            foreach (var part in _parts)
+            {
+                if (part.velocity.magnitude > max) max = part.velocity.magnitude;
+            }
+
+            return max;
+        }
+    }
+    
+    public float MinVelocity
+    {
+        get
+        {
+            float min = float.MaxValue;
+            foreach (var part in _parts)
+            {
+                if (part.velocity.magnitude < min) min = part.velocity.magnitude;
+            }
+
+            return min;
+        }
+    }
 
     protected Rigidbody[] _parts;
 
