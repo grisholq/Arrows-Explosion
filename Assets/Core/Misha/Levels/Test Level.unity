@@ -375,17 +375,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
   m_PrefabInstance: {fileID: 1831268468}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &563686581 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7278376868153348713, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-  m_PrefabInstance: {fileID: 739337666}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &587013715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -664,17 +653,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2621280268742724907, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: _amountText
-      value: 
-      objectReference: {fileID: 563686581}
     - target: {fileID: 7278376866447066381, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 7278376866447066381, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278376866447066382, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
       propertyPath: m_RootOrder
@@ -718,26 +703,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7278376866447066382, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278376866550409548, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: m_text
-      value: Level 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278376867066466031, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278376867286284547, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278376867482232414, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7278376868204795892, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -797,6 +762,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c69fc6c960159e40af5589453530469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _victory:
+    m_PersistentCalls:
+      m_Calls: []
+  _friendsLose:
+    m_PersistentCalls:
+      m_Calls: []
+  _ammoLose:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &991505912
 PrefabInstance:
   m_ObjectHideFlags: 0
