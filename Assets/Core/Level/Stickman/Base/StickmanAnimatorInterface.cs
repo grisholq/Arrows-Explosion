@@ -24,4 +24,10 @@ public class StickmanAnimatorInterface : AnimatorInterface
         if (_animator.enabled == false) return;
         _animator.SetBool(_movingParameter, true);
     }
+
+    public void Death()
+    {
+        if (_animator.enabled == false) return;
+        _animator.SetTrigger("Death");
+    }
 }

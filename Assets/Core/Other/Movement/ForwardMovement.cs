@@ -14,4 +14,11 @@ public class ForwardMovement : Movement
     {
         _mover.SetDestination(transform.position + transform.forward * _distance);
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * _distance);
+        Gizmos.DrawSphere(transform.position + transform.forward * _distance, 0.2f);
+    }
 }

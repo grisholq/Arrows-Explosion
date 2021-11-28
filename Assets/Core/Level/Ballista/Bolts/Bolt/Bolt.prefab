@@ -227,3 +227,4 @@ MonoBehaviour:
   _force: 55
   _damage: 1
   _hitDistance: 0.55
+  _trailRenderer: {fileID: 8628641110394282552}
