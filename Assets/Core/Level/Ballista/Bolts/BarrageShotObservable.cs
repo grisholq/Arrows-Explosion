@@ -15,6 +15,6 @@ public class BarrageShotObservable : ShotObservable
 
     private void Update()
     {
-        CameraPosition = transform.position + new Vector3(2, 2, -6);
+        CameraPosition = transform.position + new Vector3(4, 3, -8);
     }
 }

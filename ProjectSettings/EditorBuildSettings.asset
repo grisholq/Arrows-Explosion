@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level Minimalism.unity
-    guid: 6beab42fea38ddc48954bbe1aad90f4e
+    path: Assets/Core/Misha/Scenes/MainMenu.unity
+    guid: a3066c135fb3abd42ae5455ace8e9bf5
   - enabled: 1
-    path: Assets/Core/Misha/Levels/Level1.unity
+    path: Assets/Core/Misha/Scenes/Level1.unity
     guid: 9cce7f64d8c1cdb4097d7adc5ce42644
   - enabled: 1
-    path: Assets/Core/Misha/Levels/Level2.unity
+    path: Assets/Core/Misha/Scenes/Level2.unity
     guid: 7a785ac687c4b8542b415126ccf9112d
   - enabled: 1
-    path: Assets/Core/Misha/Levels/Level3.unity
+    path: Assets/Core/Misha/Scenes/Level3.unity
     guid: 26566d78f1b5efe4faac09bde7432661
   m_configObjects: {}

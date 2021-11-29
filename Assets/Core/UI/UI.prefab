@@ -724,7 +724,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: you killed
+  m_text: you killed too many
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}
   m_sharedMaterial: {fileID: -7706301733172009156, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3 friends
+  m_text: friends
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}
   m_sharedMaterial: {fileID: -7706301733172009156, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}
@@ -2626,7 +2626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 11 friends
+  m_text: friends
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}
   m_sharedMaterial: {fileID: -7706301733172009156, guid: eb934a7ed3bed1347a6fb6e579dc853f, type: 2}

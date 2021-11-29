@@ -31,6 +31,7 @@ public class AppsFlyerObjectScript : MonoBehaviour , IAppsFlyerConversionData
         //******************************/
  
         AppsFlyer.startSDK();
+        DontDestroyOnLoad(this.gameObject);
     }
 
 
