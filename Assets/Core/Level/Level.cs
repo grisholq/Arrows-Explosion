@@ -3,8 +3,9 @@ using UnityEngine.Events;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private float _pauseBeforeEndGame;
+    [SerializeField] private float _pauseBeforeWin;
     [SerializeField] private UnityEvent _victory;
+    [SerializeField] private UnityEvent _victoryDelay;
     [SerializeField] private UnityEvent _friendsLose;
     [SerializeField] private UnityEvent _ammoLose;
     [SerializeField] private UnityEvent _levelEnd;
@@ -16,8 +17,12 @@ public class Level : MonoBehaviour
         if (_levelEnded) return;
         _levelEnded = true;
 
-        _victory.Invoke();
-        _levelEnd.Invoke();
+        _victory?.Invoke();
+
+        Timer delay = new Timer(_pauseBeforeWin);
+        delay.Expired += _victoryDelay.Invoke;
+        delay.Expired += _levelEnd.Invoke;
+        delay.Launch();
     }
 
     public void LoseFriends()
@@ -36,14 +41,5 @@ public class Level : MonoBehaviour
 
         _ammoLose.Invoke();
         _levelEnd.Invoke();
-    }
-
-    private void EndGame(UnityAction action, float pause)
-    {
-        if (_levelEnded == true) return;
-
-        Timer timer = new Timer(pause);
-        timer.Expired += action.Invoke;
-        timer.Launch();
     }
 }
