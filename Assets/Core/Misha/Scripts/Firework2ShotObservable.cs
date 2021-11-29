@@ -13,7 +13,7 @@ public class Firework2ShotObservable : ShotObservable
         _firework.Exploded += RemoveAsShotObservable;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         CameraPosition = transform.position + new Vector3(0, 7, -10);
     }

@@ -8,6 +8,14 @@ public class Sloumo : Singleton<Sloumo>
     private const float _slowTimeScale = 0.35f;
     private const float _slowPhysicsStep = 0.01f;
 
+
+    private float defaultFixedDeltaTime;
+
+    private void Awake()
+    {
+        defaultFixedDeltaTime = Time.fixedDeltaTime;
+    }
+
     public void ActivateFor(float time)
     {
         SetSlowTime();
@@ -35,12 +43,13 @@ public class Sloumo : Singleton<Sloumo>
     private void SetSlowTime()
     {
         Time.timeScale = _slowTimeScale;
-        Time.fixedDeltaTime = _slowPhysicsStep;
+        //Time.fixedDeltaTime = _slowPhysicsStep;
+        Time.fixedDeltaTime = defaultFixedDeltaTime * (_slowTimeScale / _normalTimeScale) * 1.5f;
     }
 
     private void SetNormalTime()
     {
         Time.timeScale = _normalTimeScale;
-        Time.fixedDeltaTime = _normalPhysicsStep;
+        Time.fixedDeltaTime = defaultFixedDeltaTime;// _normalPhysicsStep;
     }
 }

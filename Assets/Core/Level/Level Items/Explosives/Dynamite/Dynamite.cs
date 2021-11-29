@@ -36,6 +36,6 @@ public class Dynamite : MonoBehaviour, IDamagable
         SpecialEffect explosion = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
         explosion.Show();
         gameObject.SetActive(false);
-        Destroy(gameObject, 0.3f);       
+        //Destroy(gameObject, 0.3f);       
     }
 }

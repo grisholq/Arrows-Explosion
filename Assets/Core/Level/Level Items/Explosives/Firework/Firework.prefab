@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6937449155277751709}
   - component: {fileID: 3858502990758425376}
   - component: {fileID: 374642037465249626}
-  - component: {fileID: 4461053700380181293}
   - component: {fileID: 1293015082038932661}
   - component: {fileID: 985677231612521880}
   - component: {fileID: 2565450725207160907}
@@ -36,6 +35,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7126222840003655824}
+  - {fileID: 8936837766141211965}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69,20 +69,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &4461053700380181293
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224259474111058964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.71
-  m_Height: 0
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.62}
 --- !u!95 &1293015082038932661
 Animator:
   serializedVersion: 3
@@ -127,9 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landscapeLayer: 3
-  moveSpeed: 50
-  maxDistance: 40
+  moveSpeed: 30
+  maxDistance: 25.06
   explosionPrefab: {fileID: 1729592723438371852, guid: e63094b0350c8c342b029988e796a1d5, type: 3}
+  damagedCollider: {fileID: 2528976227863990244}
 --- !u!114 &7012979732388409234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f6fa7c28b69e04da775a3ce2bedbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _delay: 0.1
+  _delay: 0
   _explosionRange: 3.37
   _explosionForce: 700
   _explosionOffset: {x: 0, y: 0, z: 0}
@@ -5210,6 +5197,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &7621753396917973720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8936837766141211965}
+  - component: {fileID: 2528976227863990244}
+  m_Layer: 0
+  m_Name: DamagedCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8936837766141211965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621753396917973720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6937449155277751709}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2528976227863990244
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7621753396917973720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 1.71
+  m_Height: 4.91
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7714067298069835978
 GameObject:
   m_ObjectHideFlags: 0
