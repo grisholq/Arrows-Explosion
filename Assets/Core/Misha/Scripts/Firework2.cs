@@ -17,7 +17,7 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
     public event UnityAction Launched;
     public event UnityAction Exploded;
 
-    [Layer]
+    [Layer(true)]
     [SerializeField]
     private int landscapeLayer;
 
@@ -28,6 +28,9 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
     private float distance;
     [SerializeField]
     private SpecialEffect explosionPrefab;
+
+    [SerializeField]
+    private Collider damagedCollider;
 
     private void Awake()
     {
@@ -49,7 +52,7 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
         explosion.Explode();
         SpecialEffect explosionEffect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         explosionEffect.Show();
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void PreIdle()
@@ -59,6 +62,7 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
 
     private void PreActivated()
     {
+        DCFAEngine.Timer.StartAnonimTimer(0.1f, (obj1, obj2) => { damagedCollider.enabled = true; });        
         Launched?.Invoke();
         animator.SetTrigger("Activated");
         rigidbody.velocity = Vector3.zero;
@@ -74,7 +78,7 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
             }
             if (other.TryGetComponent(out Rigidbody rigidbody))
             {
-                rigidbody.AddForce(transform.forward * moveSpeed * 200f);
+                rigidbody.AddForce(transform.forward * moveSpeed * 50f);
             }
         }
     }
@@ -88,18 +92,23 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
         Debug.DrawRay(ray.origin + Vector3.up * 0.1f, ray.direction, Color.cyan, distance);
         //Debug.Break();
 
-        if (maxDistance <= distance || Physics.Raycast(ray, moveSpeed * Time.deltaTime, 1 << landscapeLayer))
+        Vector3 movepos = transform.position + ray.direction * moveSpeed * Time.deltaTime;
+        if (maxDistance <= distance)
         {
             stateMachine.SetNextState(DefaultStates.DEATH);
         }
+        if (Physics.Raycast(ray, out RaycastHit hit, moveSpeed * Time.deltaTime, 1 << landscapeLayer))
+        {
+            stateMachine.SetNextState(DefaultStates.DEATH);
+            movepos = hit.point;
+        }
 
-        Vector3 movepos = transform.position + ray.direction * moveSpeed * Time.deltaTime;
         transform.position =(movepos);
     }
 
     void IDamager.Damage(IDamagable damagable)
     {
-
+        throw new System.NotImplementedException();
     }
 
     void IDamagable.RecieveDamage(float damage)
@@ -115,4 +124,6 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
         Gizmos.DrawLine(transform.position, transform.position + transform.forward * (maxDistance - distance));
         Gizmos.DrawSphere(transform.position + transform.forward * (maxDistance - distance), 0.2f);
     }
+
+
 }

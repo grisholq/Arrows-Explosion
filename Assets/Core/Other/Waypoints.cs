@@ -24,4 +24,17 @@ public class Waypoints : MonoBehaviour
             _waypoints[i] = transform.GetChild(i).position;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        for (int i = 0; i < _waypointsTransforms.Length; i++)
+        {
+            var point = _waypointsTransforms[i].position;
+            if (i + 1 < _waypointsTransforms.Length)
+                Gizmos.DrawLine(point, _waypointsTransforms[i + 1].position);
+
+            Gizmos.DrawSphere(point, 0.25f);
+        }
+    }
 }

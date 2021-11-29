@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
+using System;
 
 public class Explosion : MonoBehaviour, IDamager
 {
@@ -12,10 +13,21 @@ public class Explosion : MonoBehaviour, IDamager
 
     public event UnityAction Exploded;
 
+    private DCFAEngine.Timer delayTimer = new DCFAEngine.Timer();
+
     public void Explode()
     {
-        DamageObjectsInRange();
-        ForceObjectsInRange();
+        delayTimer.Start(_delay, OnDelayStoped);
+    }
+
+    private void OnDelayStoped(DCFAEngine.Timer arg1, DCFAEngine.Timer.StopResone arg2)
+    {
+        if (arg2 == DCFAEngine.Timer.StopResone.Elapsed)
+        {
+            DamageObjectsInRange();
+            ForceObjectsInRange();
+            Destroy(gameObject);
+        }
     }
 
     private void DamageObjectsInRange()
