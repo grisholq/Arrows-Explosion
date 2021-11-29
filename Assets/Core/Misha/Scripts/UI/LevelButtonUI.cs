@@ -8,7 +8,7 @@ namespace MISHA.UI
     public class LevelButtonUI : MonoBehaviour
     {
         [SerializeField]
-        private Object scene;
+        private string sceneName;
         private Button button;
 
         private void Awake()
@@ -18,7 +18,7 @@ namespace MISHA.UI
         }
         public void OnClick()
         {
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
