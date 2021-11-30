@@ -136,6 +136,7 @@ MonoBehaviour:
   _eulers: {x: 0, y: 0, z: 0}
   _lookAtObject: 1
   _lookAtEulers: {x: 0, y: 0, z: 0}
+  _speedMultiplier: 1
   _priority: 60
   _observationDelay: 0.7
 --- !u!114 &4369061705162055443

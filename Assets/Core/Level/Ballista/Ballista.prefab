@@ -358,6 +358,7 @@ MonoBehaviour:
   _eulers: {x: 30, y: 0, z: 0}
   _lookAtObject: 0
   _lookAtEulers: {x: 0, y: 0, z: 0}
+  _speedMultiplier: 1
   _coeffX: 0.2
   _coeffZ: 1
   _distance: -10.5

@@ -16,7 +16,7 @@ public class CameraObserver : Singleton<CameraObserver>
     {
         if (Current == null) return;
 
-        transform.position = Vector3.MoveTowards(transform.position, Current.CameraPosition, _speed * Time.unscaledDeltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, Current.CameraPosition, _speed * Current.SpeedMultiplier * Time.unscaledDeltaTime);
 
         if (Current.LookAtObject)
         {
