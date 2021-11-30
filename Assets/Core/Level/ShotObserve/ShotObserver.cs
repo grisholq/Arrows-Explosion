@@ -10,6 +10,8 @@ public class ShotObserver : Singleton<ShotObserver>
 
     public ShotObserverObjects ObserverObjects { get; protected set; }
 
+    private bool _disabled;
+
     private void Awake()
     {
         _shooter.Shooted += StartObservation;
@@ -19,23 +21,40 @@ public class ShotObserver : Singleton<ShotObserver>
         ObserverObjects.NoObjectsLeft += StopObservation;
     }
 
-    private void StartObservation()
+    public void StartObservation()
     {
         Sloumo.Instance.Activate();
         _observationStarted?.Invoke();     
     }
 
-    private void StopObservation()
+    public void StopObservation()
     {
         Sloumo.Instance.Deactivate();
         _observationEnded?.Invoke();
     }
 
-    public void AddObservedObject(ShotObservable observable) => ObserverObjects.AddShotObservable(observable);
-    public void RemoveObservedObject(ShotObservable observable) => ObserverObjects.RemoveShotObservable(observable);
+    public void Disable()
+    {
+        Sloumo.Instance.Deactivate();
+        _observationEnded?.Invoke();
+        ObserverObjects.ClearShotObservables();
+        _disabled = true;
+    }
+
+    public void AddObservedObject(ShotObservable observable)
+    {
+        if (_disabled) return;
+        ObserverObjects.AddShotObservable(observable);
+    }
+    public void RemoveObservedObject(ShotObservable observable)
+    {
+        if (_disabled) return;
+        ObserverObjects.RemoveShotObservable(observable);
+    } 
 
     public void SetObservedObject(ShotObservable observable)
     {
+        if (_disabled) return;
         observable.SetAsCameraObservable();
     }
 }

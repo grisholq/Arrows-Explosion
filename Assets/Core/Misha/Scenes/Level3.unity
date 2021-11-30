@@ -5135,7 +5135,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1696864
+  m_Name: pb_Mesh100904
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14136,7 +14136,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1696884
+  m_Name: pb_Mesh100924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18994,6 +18994,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2298629318795724834, guid: 241a9ac1cc09cb748a11e9976cc6bfb2, type: 3}
   m_PrefabInstance: {fileID: 219525337}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1200483518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200483520}
+  - component: {fileID: 1200483519}
+  m_Layer: 0
+  m_Name: WinCameraObserver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1200483519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200483518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8243462bd5830ad428c736cbd3766400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDefault: 0
+  _position: {x: 0, y: 0, z: 0}
+  _eulers: {x: 0, y: 0, z: 0}
+  _lookAtObject: 0
+  _lookAtEulers: {x: 0, y: 0, z: 0}
+--- !u!4 &1200483520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200483518}
+  m_LocalRotation: {x: 0.2996038, y: -0.20170401, z: 0.018358616, w: 0.9323176}
+  m_LocalPosition: {x: 11.38, y: 26.1, z: 16.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1771623974}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 34.476, y: -26.288, z: -6.032}
 --- !u!1001 &1205324975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26339,7 +26387,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1696942
+  m_Name: pb_Mesh100984
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26635,7 +26683,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1696818
+  m_Name: pb_Mesh100858
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26860,6 +26908,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1060190996934337062}
+        m_TargetAssemblyTypeName: ShotObserver, Assembly-CSharp
+        m_MethodName: Disable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1200483519}
+        m_TargetAssemblyTypeName: CameraObservable, Assembly-CSharp
+        m_MethodName: SetAsCameraObservable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _victoryDelay:
     m_PersistentCalls:
       m_Calls:
@@ -26938,6 +27010,7 @@ Transform:
   - {fileID: 461399370}
   - {fileID: 4183076656691284589}
   - {fileID: 1060190996934337061}
+  - {fileID: 1200483520}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -28003,7 +28076,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1697096
+  m_Name: pb_Mesh101136
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -30877,6 +30950,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1060190996329245385, guid: 61019127086deff4988b3598223b4e53, type: 3}
   m_PrefabInstance: {fileID: 1060190996934337060}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1060190996934337062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1060190996329245384, guid: 61019127086deff4988b3598223b4e53, type: 3}
+  m_PrefabInstance: {fileID: 1060190996934337060}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76baa5a24222f974b932e53054db1639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1377677348654846943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2959771166370994612, guid: ca7601b884a36334db20eb95da0198da, type: 3}

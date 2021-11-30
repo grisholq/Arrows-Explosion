@@ -43,6 +43,12 @@ public class ShotObserverObjects
             CurrentChanged?.Invoke(observable);
         }
     }
+
+    public void ClearShotObservables()
+    {
+        _observableObjects.Clear();
+        Current = null;
+    }
     
     private ShotObservable GetHighestPriorityShotObservable()
     {
