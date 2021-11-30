@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Sloumo : Singleton<Sloumo>
 {
     private const float _normalTimeScale = 1;
-    private const float _normalPhysicsStep = 0.02f;
+    //private const float _normalPhysicsStep = 0.02f;
+    [SerializeField]
+    private float _slowTimeScale = 0.35f;
+    //private const float _slowPhysicsStep = 0.01f;
+    [SerializeField]
+    private AudioMixer mainAudioMixer;
 
-    private const float _slowTimeScale = 0.35f;
-    private const float _slowPhysicsStep = 0.01f;
+    [SerializeField]
+    private float pithFactor = 0.5f;
 
 
     private float defaultFixedDeltaTime;
@@ -42,6 +48,8 @@ public class Sloumo : Singleton<Sloumo>
 
     private void SetSlowTime()
     {
+        float pith = _normalTimeScale - ((_normalTimeScale - _slowTimeScale) * pithFactor);
+        mainAudioMixer.SetFloat("Pith", pith);
         Time.timeScale = _slowTimeScale;
         //Time.fixedDeltaTime = _slowPhysicsStep;
         Time.fixedDeltaTime = defaultFixedDeltaTime * (_slowTimeScale / _normalTimeScale) * 1.5f;
@@ -49,6 +57,7 @@ public class Sloumo : Singleton<Sloumo>
 
     private void SetNormalTime()
     {
+        mainAudioMixer.SetFloat("Pith", _normalTimeScale);
         Time.timeScale = _normalTimeScale;
         Time.fixedDeltaTime = defaultFixedDeltaTime;// _normalPhysicsStep;
     }

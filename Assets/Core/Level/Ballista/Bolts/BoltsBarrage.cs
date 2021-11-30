@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using DCFAEngine;
 
 public class BoltsBarrage : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BoltsBarrage : MonoBehaviour
     private float _progress;
 
     private Bolt[] _bolts;
+    [SerializeField]
+    private float minHeight = -10f;
 
     private void Awake()
     {
@@ -37,7 +40,7 @@ public class BoltsBarrage : MonoBehaviour
         IncrementProgress();
         UpdatePosition();
 
-        if(HasBolts() == false)
+        if(HasBolts() == false || transform.position.y <= minHeight)
         {
             Hit?.Invoke();
             Destroy(gameObject);
@@ -59,5 +62,11 @@ public class BoltsBarrage : MonoBehaviour
     private bool HasBolts()
     {
         return transform.childCount > 0;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position.XoZ() + Vector3.up*minHeight, new Vector3(10f, 1f, 10f));
     }
 }

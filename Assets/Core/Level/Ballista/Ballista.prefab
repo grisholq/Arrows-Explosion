@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsPool: {fileID: 7123082318352630668}
-  _distancePerBall: 0.6
+  _distancePerBall: 0.96
 --- !u!114 &1849940034124931672
 MonoBehaviour:
   m_ObjectHideFlags: 0
