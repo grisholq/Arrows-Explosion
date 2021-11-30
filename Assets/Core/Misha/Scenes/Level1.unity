@@ -5703,7 +5703,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1785154
+  m_Name: pb_Mesh174868
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5945,7 +5945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552260047}
   m_Layer: 0
-  m_Name: Explosives (1)
+  m_Name: Explosives
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6153,7 +6153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 681460932}
   m_Layer: 0
-  m_Name: Decorations (1)
+  m_Name: Decorations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6303,7 +6303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5564365
+      value: -5.55
       objectReference: {fileID: 0}
     - target: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6311,7 +6311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.664
+      value: 10.81
       objectReference: {fileID: 0}
     - target: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6359,7 +6359,7 @@ GameObject:
   - component: {fileID: 793035441}
   - component: {fileID: 793035442}
   m_Layer: 0
-  m_Name: Enemies (1)
+  m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6407,7 +6407,7 @@ MonoBehaviour:
   _allEnemiesDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1898476670}
         m_TargetAssemblyTypeName: Level, Assembly-CSharp
         m_MethodName: Win
         m_Mode: 1
@@ -10593,7 +10593,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1785126
+  m_Name: pb_Mesh174840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10933,6 +10933,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2910822449294821873, guid: d0ba1844fb9076d4baf40b27be576406, type: 3}
   m_PrefabInstance: {fileID: 1156880980}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1234402659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1234402662}
+  - component: {fileID: 1234402661}
+  - component: {fileID: 1234402660}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1234402660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234402659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1234402661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234402659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1234402662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234402659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1235092134
 GameObject:
   m_ObjectHideFlags: 0
@@ -12766,7 +12832,7 @@ GameObject:
   - component: {fileID: 1627386446}
   - component: {fileID: 1627386447}
   m_Layer: 0
-  m_Name: Hostages (1)
+  m_Name: Hostages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12804,7 +12870,7 @@ MonoBehaviour:
   _hostagesDied:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1898476670}
         m_TargetAssemblyTypeName: Level, Assembly-CSharp
         m_MethodName: LoseFriends
         m_Mode: 1
@@ -12819,7 +12885,7 @@ MonoBehaviour:
   _amountChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1822326056}
         m_TargetAssemblyTypeName: FirendsAmountUI, Assembly-CSharp
         m_MethodName: ShowAmount
         m_Mode: 0
@@ -13444,6 +13510,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2231995256486611802, guid: b143acad3d4e1974396cf3639b9db3af, type: 3}
   m_PrefabInstance: {fileID: 1806171506}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1822326056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9070466877581845532, guid: e9fca7f842ca0104e9e65fc6432bbcb2, type: 3}
+  m_PrefabInstance: {fileID: 885407722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49edc1fdaebb9994499012fb47420b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1836951505
 GameObject:
   m_ObjectHideFlags: 0
@@ -14164,7 +14241,7 @@ MonoBehaviour:
   _victory:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1627386447}
         m_TargetAssemblyTypeName: Hostages, Assembly-CSharp
         m_MethodName: Dance
         m_Mode: 1
@@ -14176,7 +14253,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1627386447}
         m_TargetAssemblyTypeName: Hostages, Assembly-CSharp
         m_MethodName: ShowEmotions
         m_Mode: 1
@@ -14246,7 +14323,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!4 &1898476671
 Transform:
@@ -15155,7 +15232,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh1784934
+  m_Name: pb_Mesh174646
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -124,6 +124,4 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
         Gizmos.DrawLine(transform.position, transform.position + transform.forward * (maxDistance - distance));
         Gizmos.DrawSphere(transform.position + transform.forward * (maxDistance - distance), 0.2f);
     }
-
-
 }
