@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fba7d9173c68f941bc598c655300c20, type: 3}
+  m_Name: Arrow
+  m_EditorClassIdentifier: 
+  clipVariants:
+  - {fileID: 8300000, guid: bd42d06a06daafb459c6396703071377, type: 3}
+  pith:
+    min: 0.9
+    length: 0.2
+  cooldown: 0.05
