@@ -73,7 +73,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _ammoAmount: 5
+  _ammoAmount: 7
 --- !u!1 &251275387091625365
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballsPool: {fileID: 7123082318352630668}
-  _distancePerBall: 0.6
+  _distancePerBall: 0.96
 --- !u!114 &1849940034124931672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183076656100753952}
   - component: {fileID: 4183076656100753959}
-  - component: {fileID: 4183076656691284589}
+  - component: {fileID: 1118398318108700797}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -557,21 +557,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4183076656100753953}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 768b85e1dd806664fb19757dc10212a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _minAngle: -140
   _maxAngle: -40
---- !u!114 &4183076656691284589
+--- !u!114 &1118398318108700797
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4183076656100753953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8022b1a6e2708a6449923d302714bdcf, type: 3}
   m_Name: 

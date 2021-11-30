@@ -9,14 +9,34 @@ public class StickmanDeathAnimation : MonoBehaviour
 
     private StickmanAnimatorInterface animator;
 
+
+    [SerializeField]
+    private SkinnedMeshRenderer meshRenderer;
+
+    [SerializeField]
+    private Material disableMaterial;
+
+
+    [SerializeField]
+    private ParticleSystem bloodParticles;
+
     private void Awake()
     {
         animator = GetComponent<StickmanAnimatorInterface>();
         stickmanStability.Destabilized += StickmanDestabilized;
+        isRunned = false;
     }
+
+    private bool isRunned;
 
     private void StickmanDestabilized()
     {
-        animator.Death();
+        if (isRunned)
+            return;
+
+        isRunned = true;
+        meshRenderer.material = disableMaterial;
+        bloodParticles.Play();
+        //animator.Death();
     }
 }

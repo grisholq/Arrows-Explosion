@@ -31,8 +31,14 @@ public class BallistaHitMarker : MonoBehaviour
 
             if (Physics.Raycast(Start, End - Start, out RaycastHit hit, Vector3.Magnitude(End - Start)))
             {
+                EnableAimMarker();
                 _marker.position = hit.point;
+                _marker.rotation = Quaternion.LookRotation(End - Start, Vector3.up);
                 return;
+            }
+            else
+            {
+                DisableAimMarker();
             }
         }
     }

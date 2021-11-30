@@ -17,7 +17,7 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
     public event UnityAction Launched;
     public event UnityAction Exploded;
 
-    [Layer(true)]
+    [Layer]
     [SerializeField]
     private int landscapeLayer;
 
