@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Victory
   m_EditorClassIdentifier: 
   clipVariants:
-  - {fileID: 8300000, guid: 3943d11c8c894bd4281943b7fa3e5417, type: 3}
+  - {fileID: 8300000, guid: f4acf8d9ea47f6045bdd9d7b65c59979, type: 3}
   pith:
-    min: 0.9
-    length: 0.2
-  cooldown: 0.3
+    min: 1
+    length: 9
+  cooldown: 0

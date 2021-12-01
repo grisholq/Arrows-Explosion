@@ -6,6 +6,7 @@ using UnityEditor;
 namespace DCFAEngine.CustomEditors
 {
     [CustomPropertyDrawer(typeof(RangedFloat), true)]
+    [CustomPropertyDrawer(typeof(RangedInt), true)]
     public class RangedValueDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

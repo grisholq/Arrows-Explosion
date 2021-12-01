@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 919132148462870941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 3397613628871567548}
   m_RootOrder: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _force: 55
   _damage: 1
-  _hitDistance: 0.55
+  __additionalDistance: 1.2
   _trailRenderer: {fileID: 8628641110394282552}
   _hitSound: {fileID: 11400000, guid: 7b682f8b417a5f94681cbc94f81686a0, type: 2}
 --- !u!82 &6777621480814172233

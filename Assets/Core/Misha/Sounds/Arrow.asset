@@ -15,6 +15,6 @@ MonoBehaviour:
   clipVariants:
   - {fileID: 8300000, guid: bd42d06a06daafb459c6396703071377, type: 3}
   pith:
-    min: 0.9
-    length: 0.2
+    min: 0.8
+    length: 0.4
   cooldown: 0.05

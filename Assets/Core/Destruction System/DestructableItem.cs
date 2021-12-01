@@ -1,3 +1,4 @@
+using DCFAEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,9 +13,13 @@ public class DestructableItem : MonoBehaviour, IDamagable
     private DestructableItemHealth _health;
 
     private bool _broken = false;
+    [SerializeField]
+    private GameSound destroySound;
+    private AudioSource audioSource;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         _parts = GetComponentsInChildren<DestructableItemPart>();
         _health = GetComponent<DestructableItemHealth>();
 
@@ -42,5 +47,8 @@ public class DestructableItem : MonoBehaviour, IDamagable
 
         Broke?.Invoke();
         _broken = true;
+
+        if(audioSource != null && destroySound != null)
+            destroySound?.Play(audioSource);
     }
 }

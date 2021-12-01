@@ -21,7 +21,7 @@ namespace DCFAEngine
 
         public float MathPercent(float value)
         {
-            return value - min / length;
+            return (value - min) / length;
         }
 
         public RangedFloat() { }

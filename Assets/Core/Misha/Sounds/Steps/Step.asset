@@ -17,7 +17,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2696953f049a9ad4696f78d86353cb18, type: 3}
   - {fileID: 8300000, guid: a16635b862c3b3d42b244a329ec165c0, type: 3}
   - {fileID: 8300000, guid: 86b46df99840b324595971a591b5863c, type: 3}
-  - {fileID: 8300000, guid: 12cc09e7af563e94ba472497ece3d7c3, type: 3}
   pith:
     min: 0.9
     length: 0.2

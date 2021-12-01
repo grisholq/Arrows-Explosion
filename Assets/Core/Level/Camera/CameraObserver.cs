@@ -6,8 +6,26 @@ public class CameraObserver : Singleton<CameraObserver>
     [SerializeField] private float _speed;
     [SerializeField] private float _angularSpeed;
 
-    public CameraObservable Current { get; set; }
-  
+    private CameraObservable _current;
+    public CameraObservable Current
+    {
+        get => _current;
+        set
+        {
+            _current = value;
+
+            _lastPosition = transform.position;
+            _lastEulers = transform.eulerAngles;
+
+            coveredDistance = 0f;
+            distance = Vector3.Distance(_lastPosition, Current.transform.position);
+        }
+    }
+    public Vector3 _lastPosition;
+    public Vector3 _lastEulers;
+    private float distance;
+    private float coveredDistance;
+
     private void LateUpdate()
     {
         Observe();
@@ -16,14 +34,15 @@ public class CameraObserver : Singleton<CameraObserver>
     public void Observe()
     {
         if (Current == null) return;
+
+        coveredDistance += _speed * Current.SpeedMultiplier * Time.unscaledDeltaTime;
+
         ChangePosition();
         ChangeRotation();       
     }
 
     private void ChangeRotation()
     {
-        float angularSpeed = Time.unscaledDeltaTime * _angularSpeed * Current.SpeedMultiplier;
-
         if (Current.LookAtObject)
         {
             transform.LookAt(Current.Transform);
@@ -31,25 +50,22 @@ public class CameraObserver : Singleton<CameraObserver>
         }
         else
         {
-            transform.eulerAngles = RotateTowards(Current.Eulers);         
+            transform.eulerAngles = RotateTowards(_lastEulers, Current.Eulers, coveredDistance / distance);         
         }
     }
 
-    private Vector3 RotateTowards(Vector3 target)
+    private Vector3 RotateTowards(Vector3 origin, Vector3 target, float coveredPercent)
     {
         Vector3 eulers = transform.eulerAngles;
-        float speed = Time.unscaledDeltaTime * _angularSpeed * Current.SpeedMultiplier;
-
-        eulers.x = Mathf.MoveTowardsAngle(eulers.x, target.x, speed);
-        eulers.y = Mathf.MoveTowardsAngle(eulers.y, target.y, speed);
-        eulers.z = Mathf.MoveTowardsAngle(eulers.z, target.z, speed);
+        eulers.x = Mathf.LerpAngle(origin.x, target.x, coveredPercent);
+        eulers.y = Mathf.LerpAngle(origin.y, target.y, coveredPercent);
+        eulers.z = Mathf.LerpAngle(origin.z, target.z, coveredPercent);
 
         return eulers;
     }
 
     private void ChangePosition()
     {
-        float speed = _speed * Current.SpeedMultiplier * Time.unscaledDeltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, Current.CameraPosition, speed);
+        transform.position = Vector3.Lerp(_lastPosition, Current.CameraPosition, coveredDistance / distance);
     }
 }
