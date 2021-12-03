@@ -5,7 +5,7 @@ public class Bolt : MonoBehaviour, IDamager
 {
     [SerializeField] private float _force;
     [SerializeField] private float _damage;
-    [SerializeField] private float _hitDistance;
+    [SerializeField] private float __additionalDistance = 1.2f; 
     [SerializeField] private TrailRenderer _trailRenderer;
     [SerializeField] private GameSound _hitSound;
 
@@ -13,10 +13,11 @@ public class Bolt : MonoBehaviour, IDamager
 
     private void Awake()
     {
+        lastPosition = transform.position;
         transform.eulerAngles = Vector3.forward * Random.Range(0f, 360f);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (_stuck) return;
 
@@ -26,9 +27,16 @@ public class Bolt : MonoBehaviour, IDamager
         }
     }
 
+    private Vector3 lastPosition = Vector3.zero;
     private bool TryHit(out Transform hitTransform)
     {
-        if(Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, _hitDistance))
+        Vector3 direction = Vector3.Normalize(transform.position - lastPosition);
+        float hitDistance = Vector3.Distance(transform.position, lastPosition) + __additionalDistance;
+
+        Debug.DrawRay(lastPosition, direction, Color.red, hitDistance);
+
+        lastPosition = transform.position;
+        if (Physics.Raycast(lastPosition, direction, out RaycastHit hit, hitDistance))
         {
             hitTransform = hit.transform;
             return true;
@@ -59,5 +67,10 @@ public class Bolt : MonoBehaviour, IDamager
     public void Damage(IDamagable damagable)
     {
         damagable.RecieveDamage(_damage);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * -__additionalDistance);
     }
 }

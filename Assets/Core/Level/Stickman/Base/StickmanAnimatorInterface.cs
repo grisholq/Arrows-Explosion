@@ -35,6 +35,7 @@ public class StickmanAnimatorInterface : AnimatorInterface
     public void Dance()
     {
         if (_animator.enabled == false) return;
+        _animator.SetFloat("Salt", Random.Range(0f, 1f));
         _animator.SetTrigger("Dance");
     }
 }

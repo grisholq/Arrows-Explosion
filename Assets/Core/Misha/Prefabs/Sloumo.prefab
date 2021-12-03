@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5655efb802f46c7408b4ba856284d9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _slowTimeScale: 0.35
+  _slowTimeScale: 0.34
   mainAudioMixer: {fileID: 24100000, guid: e9335d91fcc6e2043aed261b7d1181de, type: 2}
   pithFactor: 0.5

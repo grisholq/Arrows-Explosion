@@ -25,6 +25,12 @@ public class Firework2 : MonoBehaviour, IDamager, IDamagable
     private float moveSpeed;
     [SerializeField]
     private float maxDistance;
+    public float MaxDistance
+    {
+        get => maxDistance;
+        set => maxDistance = value;
+
+    }
     private float distance;
     [SerializeField]
     private SpecialEffect explosionPrefab;

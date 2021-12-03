@@ -61,6 +61,9 @@ namespace DCFAEngine
 
         private void DecayTimerOnStoped(Timer obj, Timer.StopResone resone)
         {
+            if (gameObject == null)
+                return; 
+
             if (resone == Timer.StopResone.Elapsed)
                 switch (stopAction)
                 {

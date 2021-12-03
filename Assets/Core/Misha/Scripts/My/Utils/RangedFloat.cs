@@ -8,6 +8,7 @@ namespace DCFAEngine
         public float min;
         public float length;
         public float max => min + length;
+        public void SetMax(float value) => length = value - min;
 
         public float GetRandom()
         {
@@ -21,7 +22,7 @@ namespace DCFAEngine
 
         public float MathPercent(float value)
         {
-            return value - min / length;
+            return (value - min) / length;
         }
 
         public RangedFloat() { }

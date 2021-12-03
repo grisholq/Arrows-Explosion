@@ -24,6 +24,16 @@ public class ParticleStarter : MonoBehaviour, ISerializationCallbackReceiver
             }
         }
     }
+    public void Stop(string groupName)
+    {
+        if (particleGroupsDictionary.TryGetValue(groupName, out ParticleGroup particleGroup))
+        {
+            foreach (var particleSystem in particleGroup.particleSystems)
+            {
+                particleSystem.Stop();
+            }
+        }
+    }
 
     void ISerializationCallbackReceiver.OnBeforeSerialize() { }
 
