@@ -7,9 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 374642037465249626, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1224259474111058964, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
       propertyPath: m_Name
       value: FireworkDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528976227863990244, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: m_Height
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528976227863990244, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: m_Radius
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2565450725207160907, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
       propertyPath: moveSpeed
@@ -19,6 +31,14 @@ PrefabInstance:
       propertyPath: maxDistance
       value: 6.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2565450725207160907, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: landscapeLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565450725207160907, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: explosionPrefab
+      value: 
+      objectReference: {fileID: 4477381905246541452, guid: 3bb7eeb19477eb844b514303a5a44375, type: 3}
     - target: {fileID: 4369061705162055443, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
       propertyPath: _explosionForce
       value: 0
@@ -77,6 +97,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7012979732388409234, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7621753396917973720, guid: 5a2d72c045890774baec13abd5639d80, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

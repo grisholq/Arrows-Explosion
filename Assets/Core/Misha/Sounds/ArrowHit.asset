@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fba7d9173c68f941bc598c655300c20, type: 3}
-  m_Name: Arrow
+  m_Name: ArrowHit
   m_EditorClassIdentifier: 
   clipVariants:
   - {fileID: 8300000, guid: bd42d06a06daafb459c6396703071377, type: 3}
+  - {fileID: 8300000, guid: 74a70c6874dd5b842b346800fb3b2b35, type: 3}
+  - {fileID: 8300000, guid: 8b01bcac1aad6eb41828d6175c48be39, type: 3}
   pith:
-    min: 0.8
-    length: 0.4
-  cooldown: 0.05
+    min: 0.9
+    length: 0.2
+  cooldown: 0.03

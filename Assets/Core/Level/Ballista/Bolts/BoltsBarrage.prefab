@@ -134,7 +134,7 @@ MonoBehaviour:
   _eulers: {x: 0, y: 0, z: 0}
   _lookAtObject: 1
   _lookAtEulers: {x: 0, y: 0, z: 0}
-  _speedMultiplier: 1
+  _speedMultiplier: 0.8
   _priority: 50
 --- !u!1001 &187212418420232
 PrefabInstance:
