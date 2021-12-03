@@ -3598,6 +3598,7 @@ MonoBehaviour:
   _eulers: {x: 0, y: 0, z: 0}
   _lookAtObject: 0
   _lookAtEulers: {x: 0, y: 0, z: 0}
+  _speedMultiplier: 0.2
 --- !u!43 &323298692
 Mesh:
   m_ObjectHideFlags: 0
