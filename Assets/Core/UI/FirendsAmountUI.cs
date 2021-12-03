@@ -1,12 +1,17 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FirendsAmountUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _amountText;
+    [SerializeField] private TextMeshProUGUI _currentAmount;
+    [SerializeField] private TextMeshProUGUI _minAmount;
+    [SerializeField] private UnityEvent _updated;
 
-    public void ShowAmount(int amount, int maxAmount)
+    public void ShowAmount(int amount, int minAmount)
     {
-        _amountText.text = amount.ToString() + "/" + maxAmount.ToString();
+        _currentAmount.text = amount.ToString();
+        _minAmount.text = "min " + minAmount.ToString();
+        _updated.Invoke();
     }    
 }

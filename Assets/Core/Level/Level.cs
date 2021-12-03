@@ -16,12 +16,12 @@ public class Level : MonoBehaviour
     {
         if (_levelEnded) return;
         _levelEnded = true;
+        _levelEnd.Invoke();
 
         _victory?.Invoke();
 
         Timer delay = new Timer(_pauseBeforeWin);
         delay.Expired += _victoryDelay.Invoke;
-        delay.Expired += _levelEnd.Invoke;
         delay.Launch();
     }
 

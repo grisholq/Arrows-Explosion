@@ -5788,7 +5788,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35428
+  m_Name: pb_Mesh36402
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6146,7 +6146,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35400
+  m_Name: pb_Mesh36376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6309,7 +6309,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4183076656100753959, guid: ca7601b884a36334db20eb95da0198da, type: 3}
   m_PrefabInstance: {fileID: 4183076656691284587}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1764585261}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 768b85e1dd806664fb19757dc10212a8, type: 3}
@@ -10114,7 +10114,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35170
+  m_Name: pb_Mesh36164
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13421,6 +13421,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8622158389626816947, guid: 884b2642718f8db4fbe947e3c46d6113, type: 3}
   m_PrefabInstance: {fileID: 1635379568}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1764585261 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4183076656100753953, guid: ca7601b884a36334db20eb95da0198da, type: 3}
+  m_PrefabInstance: {fileID: 4183076656691284587}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1785528241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14667,6 +14672,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 885407728}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1764585261}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
