@@ -16102,5 +16102,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ballista
       objectReference: {fileID: 0}
+    - target: {fileID: 4183076656757761495, guid: ca7601b884a36334db20eb95da0198da, type: 3}
+      propertyPath: _minForce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca7601b884a36334db20eb95da0198da, type: 3}

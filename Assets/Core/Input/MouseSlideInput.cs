@@ -73,7 +73,7 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
     private void StartSlide()
     {
         Start = GetSlideCurrentPosition();
-        End = Start;
+        End = Start - new Vector3(0, 1f);
         Started?.Invoke();
         _slideStarted = true;
     }
@@ -87,15 +87,16 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
             End = newEnd;
             Moved?.Invoke();
             DeltaChanged?.Invoke(Delta);
-        }  
+        }
+        else
+        {
+            CorrectStartAndEnd(newEnd);
+        }
     }
 
     private void EndSlide()
     {
-        if(IsSlideEndCorrent(End))
-        {
-            Ended?.Invoke();
-        }            
+        Ended?.Invoke();                
         _slideStarted = false;
     }
 
@@ -104,6 +105,13 @@ public class MouseSlideInput : MonoBehaviour, ISlideInput
         Vector3 delta = end - Start;
         float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
         return angle > _minAngle && angle < _maxAngle;
+    }
+
+    private void CorrectStartAndEnd(Vector3 newEnd)
+    {
+        Vector3 delta = Start - End;
+        Start = newEnd + delta;
+        End = newEnd;
     }
 
     private Vector3 GetSlideCurrentPosition()
